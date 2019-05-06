@@ -1,4 +1,4 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AccesClass;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,8 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
 
-
-    //propriété
+    //Création des deux tables
 
     private String creationTableQuizz = "create table quizz ("
             + "numeroQuizz INTEGER PRIMARY KEY,"
@@ -26,6 +25,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "FOREIGN KEY(idQuestionnaire)"
             + "REFERENCES quizz(id));";
 
+    //Drop des deux tables
+
     private String dropTableQuizz = "DROP TABLE IF EXISTS quizz;";
     private String dropTableQuestion = "DROP TABLE IF EXISTS questionQuizz;";
 
@@ -35,6 +36,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     }
 
+    // Éxécution des requêtes ci-dessus
     @Override
     public void onCreate(SQLiteDatabase db) {
 

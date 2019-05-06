@@ -1,4 +1,4 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AccesClass;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 
+import com.example.godetremy.remy_godet_app_quizz.AfficheClass.AfficheQuestionQuizz;
 import com.example.godetremy.remy_godet_app_quizz.Modele.Quizz;
+import com.example.godetremy.remy_godet_app_quizz.R;
 
 import java.util.List;
 

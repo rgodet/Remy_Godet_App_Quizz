@@ -1,19 +1,22 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AfficheClass;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.godetremy.remy_godet_app_quizz.Controleur.Controle;
+import com.example.godetremy.remy_godet_app_quizz.AccesClass.AccesLocal;
 import com.example.godetremy.remy_godet_app_quizz.Modele.Question;
+import com.example.godetremy.remy_godet_app_quizz.R;
 
 import java.util.List;
+
+import static java.security.AccessController.getContext;
 
 public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnClickListener
 {
@@ -69,21 +72,28 @@ public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
 
-        int id = txtRadioGroup.getCheckedRadioButtonId();
-        RadioButton radioButton = findViewById(id);
-        if (radioButton.getText().toString().equalsIgnoreCase(questionList.get(position).getReponse())){
-            score++;
-        }
 
-        if (!(position == questionList.size() - 1)){
+
+        if (position < questionList.size() - 1){
+
+            int id = txtRadioGroup.getCheckedRadioButtonId();
+            RadioButton radioButton = findViewById(id);
+            if (radioButton.getText().toString().equalsIgnoreCase(questionList.get(position).getReponse())){
+                score++;
+            }
             position++;
+            txtChoix1.setText(questionList.get(position).getChoix1());
+            txtChoix2.setText(questionList.get(position).getChoix2());
+            txtChoix3.setText(questionList.get(position).getChoix3());
+            txtChoix4.setText(questionList.get(position).getChoix4());
+            //txtScore.setText(questionList.get(position).get);
+            txtLibelleQuestion.setText (questionList.get(position).getQuestion());
+
+            Log.i("size", "Size : " + questionList.size());
+
+                   // v.getContext(), "Size :" + questionList.size(), Toast.LENGTH_SHORT).show();
         }
 
-        txtChoix1.setText(questionList.get(position).getChoix1());
-        txtChoix2.setText(questionList.get(position).getChoix2());
-        txtChoix3.setText(questionList.get(position).getChoix3());
-        txtChoix4.setText(questionList.get(position).getChoix4());
-        //txtScore.setText(questionList.get(position).get);
-        txtLibelleQuestion.setText (questionList.get(position).getQuestion());
+
     }
 }

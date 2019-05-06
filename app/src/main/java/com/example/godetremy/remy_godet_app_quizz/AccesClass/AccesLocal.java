@@ -1,4 +1,4 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AccesClass;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,7 +16,7 @@ public class AccesLocal {
 
     //propriété
     private String nomBase = "bdQuizz.sqlite";
-    private Integer versionBase = 3;
+    private Integer versionBase = 4;
     private MySQLiteOpenHelper accesBD;
     private SQLiteDatabase bd;
 
@@ -45,7 +45,6 @@ public class AccesLocal {
         //String req = "insert into quizz (numeroQuizz, titreQuizz) values (quizz.getNumeroQuizz(),quizz.getTitreQuizz())";
 
         ContentValues cv = new ContentValues();
-        cv.put("id", 0);
         cv.put("idQuestionnaire", question.getNumeroQuizz());
         cv.put("question", question.getQuestion());
         cv.put("reponse", question.getReponse());

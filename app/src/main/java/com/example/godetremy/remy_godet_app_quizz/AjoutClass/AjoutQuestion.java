@@ -1,4 +1,4 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AjoutClass;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.godetremy.remy_godet_app_quizz.Controleur.Controle;
 import com.example.godetremy.remy_godet_app_quizz.Modele.Quizz;
+import com.example.godetremy.remy_godet_app_quizz.QuizzActivity;
+import com.example.godetremy.remy_godet_app_quizz.R;
 
 public class AjoutQuestion extends AppCompatActivity {
 
@@ -74,9 +76,6 @@ public class AjoutQuestion extends AppCompatActivity {
                     choix2 = txtChoix2.getText().toString();
                     choix3 = txtChoix3.getText().toString();
                     choix4 = txtChoix4.getText().toString();
-
-                    Log.i("affichage","" + numeroQuizz + " § " + question + "@" + reponse + "@" + choix1 + "@" + choix2 + "@" + choix3 + "@" + choix4 + "@");
-
 
                 }catch(Exception e){}
                 //Test des saisie

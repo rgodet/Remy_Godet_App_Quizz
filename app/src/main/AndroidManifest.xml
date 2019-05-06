@@ -24,11 +24,11 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".AfficheCompte" />
+        <activity android:name=".AfficheClass.AfficheCompte" />
         <activity android:name=".QuizzActivity" />
-        <activity android:name=".AjoutQuizz" />
-        <activity android:name=".AjoutQuestion" />
-        <activity android:name=".AfficheQuestionQuizz"></activity>
+        <activity android:name=".AjoutClass.AjoutQuizz" />
+        <activity android:name=".AjoutClass.AjoutQuestion" />
+        <activity android:name=".AfficheClass.AfficheQuestionQuizz"></activity>
     </application>
 
 </manifest>

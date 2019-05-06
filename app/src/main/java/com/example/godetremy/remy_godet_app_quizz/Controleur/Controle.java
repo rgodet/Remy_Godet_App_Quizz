@@ -3,7 +3,7 @@ package com.example.godetremy.remy_godet_app_quizz.Controleur;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.godetremy.remy_godet_app_quizz.AccesLocal;
+import com.example.godetremy.remy_godet_app_quizz.AccesClass.AccesLocal;
 import com.example.godetremy.remy_godet_app_quizz.Modele.Quizz;
 import com.example.godetremy.remy_godet_app_quizz.Modele.Question;
 

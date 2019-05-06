@@ -1,14 +1,16 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AfficheClass;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.godetremy.remy_godet_app_quizz.AjoutClass.AjoutQuestion;
+import com.example.godetremy.remy_godet_app_quizz.AjoutClass.AjoutQuizz;
+import com.example.godetremy.remy_godet_app_quizz.R;
 
 
 public class AfficheCompte extends AppCompatActivity {

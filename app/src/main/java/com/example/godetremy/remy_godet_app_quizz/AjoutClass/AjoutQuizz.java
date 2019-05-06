@@ -1,4 +1,4 @@
-package com.example.godetremy.remy_godet_app_quizz;
+package com.example.godetremy.remy_godet_app_quizz.AjoutClass;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.godetremy.remy_godet_app_quizz.Controleur.Controle;
+import com.example.godetremy.remy_godet_app_quizz.QuizzActivity;
+import com.example.godetremy.remy_godet_app_quizz.R;
 
 public class AjoutQuizz extends AppCompatActivity {
 
