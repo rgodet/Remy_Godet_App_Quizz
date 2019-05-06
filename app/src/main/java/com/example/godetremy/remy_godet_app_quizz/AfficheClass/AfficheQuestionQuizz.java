@@ -21,8 +21,28 @@ import static java.security.AccessController.getContext;
 public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnClickListener
 {
 
+
+    /**
+     *
+     * @param txtLibelleQuestion
+     * @param txtScore
+     * @param txtNbQuestion
+     * @param txtRadioGroup
+     * @param txtChoix1
+     * @param txtChoix2
+     * @param txtChoix3
+     * @param txtChoix4
+     * @param valideQuestion
+     * @param score
+     * @param position
+     * @param questionList
+     *
+     */
+
+    //Propriété
     private TextView txtLibelleQuestion;
     private TextView txtScore;
+    private TextView txtNbQuestion;
     private RadioGroup txtRadioGroup;
     private RadioButton txtChoix1;
     private RadioButton txtChoix2;
@@ -33,6 +53,8 @@ public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnCl
     int position = 0;
     List<Question> questionList;
 
+
+    // La Méthode OnCreate va permettre que lorsque l'on démarre l'activité on lance les requetes suivantes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +67,8 @@ public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnCl
         questionList =accesLocal.getQuestionQuizz(idquizz);
         init();
 
+        updateUI();
+
         txtChoix1.setText(questionList.get(position).getChoix1());
         txtChoix2.setText(questionList.get(position).getChoix2());
         txtChoix3.setText(questionList.get(position).getChoix3());
@@ -53,10 +77,23 @@ public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnCl
 
 
     }
+
+    private void updateUI() {
+        txtLibelleQuestion.setText(questionList.get(position).getQuestion());
+        txtChoix1.setText(questionList.get(position).getChoix1());
+        txtChoix2.setText(questionList.get(position).getChoix2());
+        txtChoix3.setText(questionList.get(position).getChoix3());
+        txtChoix4.setText(questionList.get(position).getChoix4());
+        txtNbQuestion.setText((position + 1)+ "/" + questionList.size());
+        txtScore.setText("Score : "+ score);
+    }
+
+    //Récupération des radio Button ect...
     private void init() {
 
         txtLibelleQuestion = (TextView) findViewById(R.id.txtLibelleQuestion);
         txtRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        txtNbQuestion = (TextView) findViewById(R.id.txtNbQuestion);
         txtScore = (TextView) findViewById(R.id.txtScore);
         txtChoix1 = (RadioButton) findViewById(R.id.choix1);
         txtChoix2 = (RadioButton) findViewById(R.id.choix2);
@@ -69,27 +106,31 @@ public class AfficheQuestionQuizz extends AppCompatActivity implements View.OnCl
     }
 
 
+    //Evenement on click du bouton valider des questions
+
     @Override
     public void onClick(View v) {
 
 
 
-        if (position < questionList.size() - 1){
+        if (position < questionList.size()){
 
             int id = txtRadioGroup.getCheckedRadioButtonId();
             RadioButton radioButton = findViewById(id);
             if (radioButton.getText().toString().equalsIgnoreCase(questionList.get(position).getReponse())){
-                score++;
-            }
-            position++;
-            txtChoix1.setText(questionList.get(position).getChoix1());
-            txtChoix2.setText(questionList.get(position).getChoix2());
-            txtChoix3.setText(questionList.get(position).getChoix3());
-            txtChoix4.setText(questionList.get(position).getChoix4());
-            //txtScore.setText(questionList.get(position).get);
-            txtLibelleQuestion.setText (questionList.get(position).getQuestion());
 
-            Log.i("size", "Size : " + questionList.size());
+                score++;
+                txtScore.setText(" "+ score);
+            }
+
+            position++;
+
+           if (position == questionList.size()){
+               Toast.makeText(v.getContext(), "LE QUIZ EST TERMINÉ. Votre score est de : "+ score, Toast.LENGTH_LONG).show();
+               return;
+           }
+
+           updateUI();
 
                    // v.getContext(), "Size :" + questionList.size(), Toast.LENGTH_SHORT).show();
         }

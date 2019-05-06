@@ -25,6 +25,19 @@ public class AjoutQuestion extends AppCompatActivity {
         this.controle = Controle.getInstance(getApplicationContext());
     }
 
+    /**
+     *
+     * @param txtNumeroQuizz
+     * @param txtLibelleQuestion
+     * @param txtReponse
+     * @param txtChoix1
+     * @param txtChoix2
+     * @param txtChoix3
+     * @param txtChoix4
+     * @param controle
+     *
+     */
+
     //propriété
     private EditText txtNumeroQuizz;
     private EditText txtLibelleQuestion;
@@ -57,7 +70,6 @@ public class AjoutQuestion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(getApplicationContext(), "prout", Toast.LENGTH_SHORT).show();
                 Integer numeroQuizz = 0;
                 String question = "";
                 String reponse = "";

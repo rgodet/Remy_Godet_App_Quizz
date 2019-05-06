@@ -17,7 +17,11 @@ import java.util.List;
 public class ListViewAdapter extends ArrayAdapter<Quizz> implements View.OnClickListener {
 
 
-    //propriétéListView listQuizzView;
+    /**
+     * @param ress
+     */
+
+    //propriété ListView listQuizzView;
     private int ress;
 
     public ListViewAdapter(Context context, int resource, List<Quizz> objects) {
@@ -53,11 +57,5 @@ public class ListViewAdapter extends ArrayAdapter<Quizz> implements View.OnClick
 
     }
 
-
-}
-
-
-interface CustomOnClick{
-    public void onClick(View v, int position);
 
 }
