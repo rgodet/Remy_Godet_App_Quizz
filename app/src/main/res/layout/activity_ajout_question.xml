@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AjoutQuestion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajout d'une Question"
+            android:textSize="60px"/>
+
+        <EditText
+            android:id="@+id/txtNumeroQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer un numero de quizz" />
+
+        <EditText
+            android:id="@+id/txtLibelleQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer un libelle de la question" />
+
+        <EditText
+            android:id="@+id/txtReponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer la réponse" />
+
+        <EditText
+            android:id="@+id/txtChoix1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer le choix 1" />
+
+        <EditText
+            android:id="@+id/txtChoix2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer le choix 2" />
+
+        <EditText
+            android:id="@+id/txtChoix3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer le choix 3" />
+
+        <EditText
+            android:id="@+id/txtChoix4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer le choix 4" />
+
+        <Button
+            android:id="@+id/valideQuestionQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

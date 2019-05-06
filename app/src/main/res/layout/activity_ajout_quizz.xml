@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AjoutQuizz">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajout d'un Quizz"
+            android:textSize="60px"/>
+
+        <EditText
+            android:id="@+id/txtNumeroQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer un numero de quizz" />
+
+        <EditText
+            android:id="@+id/txtTitre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Entrer un libelle de quizz" />
+
+        <Button
+            android:id="@+id/valideQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
